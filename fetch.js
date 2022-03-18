@@ -511,7 +511,7 @@ export function fetch(input, init) {
       return reject(new DOMException('Aborted', 'AbortError'))
     }
 
-    var xhr = new XMLHttpRequest()
+    var xhr = fetch.CustomHttpRequest ? new fetch.CustomHttpRequest() : new XMLHttpRequest()
 
     function abortXhr() {
       xhr.abort()
